@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+
+<html>
+<body>
+
+<h2>Tentpole Data Science</h2>
+
+  <form action="{% url 'getCustomerInformation' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+   
+      <label for="fname">First Name</label>
+      <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name">
+    
+
+        
+      <label for="lname">Last Name</label>
+      <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name">
+      
+      <label for="dateOfBirth">Date Of Birth</label>
+      <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth"  value="{{placement.date|date:'Y-m-d' }}">
+
+      
+      <!--
+       Did not include the file input UI due to it not posting/uploading the file
+       
+        <form enctype = "multipart/form-data" action = "save_file.py" method = "post">
+          <p>File: <input type = "file" name = "filename" /></p>
+       </form>
+        
+     -->
+     
+
+
+    <input type="Submit" name="submit" value="Submit"/>
+  </form>
+
+  
+</form> 
+
+<h3>Please fill in all the information for it to be submitted succesfully</h3>
+
+</body>
+</html>
